@@ -48,4 +48,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open filesystem view' })
+
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move highlighted lines up' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move highlighted lines down' })
+
+vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Move next line to the end of this one' })
+
+vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Paste without yanking highlighted' })
+
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank selection to clipboard' })
+vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank line to clipboad' })
+
+vim.keymap.set('i', '<C-c>', '<Esc>', { desc = 'Ctrl+C just sends Esc during insert mode' })
+vim.keymap.set('n', '<leader>rw', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace word in buffer' })
+
 -- vim: ts=2 sts=2 sw=2 et
