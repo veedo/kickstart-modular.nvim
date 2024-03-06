@@ -74,7 +74,7 @@ vim.opt.smarttab = true
 vim.opt.smartindent = true
 
 -- Use spaces for tabs, and default to 4
-vim.opt.tabstop = 8
+vim.opt.tabstop = 4
 -- might need this to convert tabs to spaces:
 -- vim.opt.softtabstop = 0
 vim.opt.softtabstop = 4
