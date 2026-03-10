@@ -11,7 +11,7 @@
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -35,17 +35,24 @@ require('lazy').setup({
   require 'kickstart.plugins.conform',
 
   require 'kickstart.plugins.blink-cmp',
-  -- require 'kickstart/plugins/tokyonight',
-  require 'kickstart/plugins/catppuccin',
+
+  require 'kickstart.plugins.catppuccin',
+
+  require 'kickstart.plugins.todo-comments',
+
+  require 'kickstart.plugins.mini',
+
+  require 'kickstart.plugins.harpoon',
+  require 'kickstart.plugins.fugitive',
+  require 'kickstart.plugins.undotree',
+
+  --require 'kickstart.plugins.tokyonight',
 
   require 'kickstart.plugins.todo-comments',
 
   require 'kickstart.plugins.mini',
 
   require 'kickstart.plugins.treesitter',
-  require 'kickstart.plugins.harpoon',
-  require 'kickstart.plugins.fugitive',
-  require 'kickstart.plugins.undotree',
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
