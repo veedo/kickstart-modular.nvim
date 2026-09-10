@@ -84,15 +84,6 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
--- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
-
 -- [[ Setting options ]]
 require 'options'
 -- See `:help vim.o`
@@ -221,27 +212,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- [[ Install `lazy.nvim` plugin manager ]]
---    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
-require 'lazy-bootstrap'
+-- [[ Set up vim.pack ]]
+require 'pack'
 
 -- [[ Configure and install plugins ]]
-require 'lazy-plugins'
---
---  To check the current status of your plugins, run
---    :Lazy
---
---  You can press `?` in this menu for help. Use `:q` to close the window
---
---  To update plugins you can run
---    :Lazy update
---
---[[ NOTE: Actual plugin installation happens in lua/lazy-plugins.lua, which is
-required above. This used to also contain a second, duplicate `require('lazy').setup({...})`
-call merged in from upstream kickstart.nvim - since lazy.nvim refuses to run setup() twice in
-the same session, that whole block was dead code (it just printed
-"Re-sourcing your config is not supported with lazy.nvim" on every startup) and has been removed.
-]]
+require 'plugins'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
