@@ -1,5 +1,3 @@
-local function gh(repo) return 'https://github.com/' .. repo end
-
 -- [[ Fuzzy Finder (files, lsp, etc) ]]
 --
 -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -24,16 +22,8 @@ local function gh(repo) return 'https://github.com/' .. repo end
 -- Telescope picker. This is really useful to discover what Telescope can
 -- do as well as how to actually do it!
 
----@type (string|vim.pack.Spec)[]
-local telescope_plugins = {
-  gh 'nvim-lua/plenary.nvim',
-  gh 'nvim-telescope/telescope.nvim',
-  gh 'nvim-telescope/telescope-ui-select.nvim',
-}
-if vim.fn.executable 'make' == 1 then table.insert(telescope_plugins, gh 'nvim-telescope/telescope-fzf-native.nvim') end
-
--- NOTE: You can install multiple plugins at once
-vim.pack.add(telescope_plugins)
+-- plenary.nvim, telescope.nvim, telescope-ui-select.nvim and telescope-fzf-native.nvim
+-- are provided as Nix-managed native packages (see modules/packages/nvim/neovim.nix)
 
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {

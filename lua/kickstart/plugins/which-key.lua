@@ -1,7 +1,5 @@
-local function gh(repo) return 'https://github.com/' .. repo end
-
 -- Useful plugin to show you pending keybinds.
-vim.pack.add { gh 'folke/which-key.nvim' }
+-- which-key.nvim is provided as a Nix-managed native package (see modules/packages/nvim/neovim.nix)
 require('which-key').setup {
   -- Delay between pressing a key and opening which-key (milliseconds)
   delay = 0,

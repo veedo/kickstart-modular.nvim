@@ -1,7 +1,5 @@
-local function gh(repo) return 'https://github.com/' .. repo end
-
 -- [[ Formatting ]]
-vim.pack.add { gh 'stevearc/conform.nvim' }
+-- conform.nvim is provided as a Nix-managed native package (see modules/packages/nvim/neovim.nix)
 require('conform').setup {
   notify_on_error = false,
   format_on_save = function(bufnr)

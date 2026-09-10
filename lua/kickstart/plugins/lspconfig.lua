@@ -1,5 +1,3 @@
-local function gh(repo) return 'https://github.com/' .. repo end
-
 -- [[ LSP Configuration ]]
 -- Brief aside: **What is LSP?**
 --
@@ -27,7 +25,7 @@ local function gh(repo) return 'https://github.com/' .. repo end
 -- and elegantly composed help section, `:help lsp-vs-treesitter`
 
 -- Useful status updates for LSP.
-vim.pack.add { gh 'j-hui/fidget.nvim' }
+-- fidget.nvim is provided as a Nix-managed native package (see modules/packages/nvim/neovim.nix)
 require('fidget').setup {}
 
 --  This function gets run when an LSP attaches to a particular buffer.
@@ -101,11 +99,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- LSP servers are installed system-wide via Nix (see modules/packages/nvim/neovim.nix)
 -- rather than from within Neovim, so we use lazy-lsp.nvim to auto-detect and
 -- enable whichever servers are already on PATH instead of using mason.
-vim.pack.add {
-  gh 'neovim/nvim-lspconfig',
-  gh 'dundalek/lazy-lsp.nvim',
-}
-
+-- nvim-lspconfig and lazy-lsp.nvim are provided as Nix-managed native packages.
 require('lazy-lsp').setup {
   use_vim_lsp_config = true,
   configs = {

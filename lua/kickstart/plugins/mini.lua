@@ -1,8 +1,6 @@
-local function gh(repo) return 'https://github.com/' .. repo end
-
 -- [[ mini.nvim ]]
 --  A collection of various small independent plugins/modules
-vim.pack.add { gh 'nvim-mini/mini.nvim' }
+--  mini.nvim is provided as a Nix-managed native package (see modules/packages/nvim/neovim.nix)
 
 -- If a nerd font is available, load the icons module for pretty icons in various plugins.
 if vim.g.have_nerd_font then
